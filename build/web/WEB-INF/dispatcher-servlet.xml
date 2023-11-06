@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                
+                <!-- CLIENTE SIN REGISTRO -->
+                <prop key="index.htm">ControladorIndex</prop>
+                <prop key="detalleI.htm">ControladorIndex</prop>
+                
+                <prop key="buscar.htm">ControladorIndex</prop>
+                
+                <!-- CLIENTE -->
+                <prop key="cliente.htm">ControladorCliente</prop>                
+                <prop key="clientee.htm">ControladorCliente</prop>
+                <prop key="detalleC.htm">ControladorCliente</prop>
+                <prop key="AddCli.htm">ControladorCliente</prop>
+                <prop key="registrarCliente.htm">ControladorCliente</prop>
+                
+                <prop key="buscarC.htm">ControladorCliente</prop>
+                
+                <!-- ADMINISTRADOR -->
+                <prop key="admi.htm">ControladorAdmin</prop>
+                <prop key="Admin.htm">ControladorAdmin</prop>
+                <prop key="detalleA.htm">ControladorAdmin</prop>
+                <prop key="ListAdmi.htm">ControladorAdmin</prop>                
+                <prop key="detallesA.htm">ControladorAdmin</prop>
+                <prop key="Actualizar.htm">ControladorAdmin</prop>
+                <prop key="NuevoArt.htm">ControladorAdmin</prop>
+                
+                <!-- SALIR SESSION -->
+                <prop key="salir.htm">ControladorAdmin</prop>
+                
+                <prop key="ListStock.htm">ControladorAdmin</prop>
+                <prop key="ListtStock.htm">ControladorAdmin</prop>
+                <prop key="borrar.htm">ControladorAdmin</prop>
+                <prop key="ArtND.htm">ControladorAdmin</prop>
+                <prop key="ActualizarD.htm">ControladorAdmin</prop>
+                <prop key="ClienteList.htm">ControladorAdmin</prop>
+                
+                <prop key="UsuarioList.htm">ControladorAdmin</prop>
+                <prop key="ActualizarUsuario.htm">ControladorAdmin</prop>
+                <prop key="registrarUsuario.htm">ControladorAdmin</prop>
+                <prop key="Inactivo.htm">ControladorAdmin</prop>
+                <prop key="Activo.htm">ControladorAdmin</prop>
+                
+                <prop key="reportes.htm">ControladorAdmin</prop>
+                
+                
+                <!-- ADMINISTRADOR AJAX -->
+                <prop key="Marca.htm">ControladorAdminAjax</prop>
+                <prop key="listar.htm">ControladorAdminAjax</prop>
+                <prop key="listarN.htm">ControladorAdminAjax</prop>
+                <prop key="listarID.htm">ControladorAdminAjax</prop>
+                <prop key="metodos.htm">ControladorAdminAjax</prop>
+                
+                <prop key="Usuario.htm">ControladorAdminAjax</prop>
+                <prop key="listar1.htm">ControladorAdminAjax</prop>
+                <prop key="listar2.htm">ControladorAdminAjax</prop>
+                <prop key="listar3.htm">ControladorAdminAjax</prop>
+                <prop key="listarUN.htm">ControladorAdminAjax</prop>
+                <prop key="listarIDU.htm">ControladorAdminAjax</prop>
+                <prop key="metodosU.htm">ControladorAdminAjax</prop>
+                
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    -->
+    
+    <bean name="ControladorIndex" class="controller.ControladorIndex" />
+    <bean name="ControladorCliente" class="controller.ControladorCliente" />
+    <bean name="ControladorAdmin" class="controller.ControladorAdmin" />
+    <bean name="ControladorAdminAjax" class="controller.ControladorAdminAjax" />
+    
+</beans>

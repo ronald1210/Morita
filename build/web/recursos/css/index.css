@@ -1,0 +1,55 @@
+body{
+    background: #DFD2F1;
+}
+.bginfo {
+    background-color: #44059E;
+}
+.img1{
+    width: 75%;
+    height: 260px;
+}
+.card-header.text-center {
+    padding: 5px 0 0 0;
+}
+.card-body.text-center {
+    padding: 0;
+}
+.card-footer.text-center {
+    padding: 5px 0 10px 0;
+}
+.caja{
+    display: flex;
+}
+.izquierda, .derecha{
+    text-align: center;
+}
+.derecha {
+    margin: 35px;
+}
+.img2 {
+    width: 85%;
+    height: 350px;
+    border: dotted;
+    border-color: cornflowerblue;
+}
+i{
+    margin-right: 5px;
+}
+.marca {
+    display: inline-flex;   
+}
+.marnom {
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+.estd{
+    color: green;
+}
+.estdN{
+    color: red;
+}
+.img7{
+    width: 40%;
+    /*height: 250px;*/
+    height: 210px;
+}

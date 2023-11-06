@@ -1,0 +1,18 @@
+.card-header.bg-info.text-center.mt-4 {
+    width: 75%;
+    margin: auto;
+}
+.card-body {
+    width: 75%;
+    margin: auto;
+}
+.boton {
+    text-align: center;
+}
+.regresar {
+    text-align: right;
+}
+.img3 {
+    width: 25%;
+    margin-left: 35%;
+}
